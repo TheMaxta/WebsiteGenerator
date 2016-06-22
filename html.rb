@@ -121,6 +121,66 @@ class Html
 
 
 "
+
+  @html = $x
+
+
+  end
+
+
+  def set_title
+
+    puts "  Please type a title for you website."
+    puts "  --- | must be  under 15 characters |  --- "
+    new_title = gets.chomp
+    @html = @html.gsub("Auto Generated Title", new_title)
+
+    save_changes
+  end
+
+  def set_welcome
+
+    puts "  Please type welcome message for you website."
+    puts "  --- | prefferably under 30 characters |  --- "
+    new_welcome = gets.chomp
+    @html = @html.gsub("Making the world a better place", new_welcome)
+
+    save_changes
+  end
+
+  def set_description
+    puts "  Please type a brief description for you website."
+    puts "  --- | prefferably under 100 characters |  --- "
+    new_description = gets.chomp
+    @html = @html.gsub("We're more than the chat, mail, search and phone that's
+        crowned Hooli as the most respected brand in the world.", new_description)
+
+
+    save_changes
+
+  end
+
+  def save_changes
+
+    puts @html
+
+    puts "Eveything look good? type yes to save changes."
+      puts "Answer:           |   (yes)   or   (no)   |"
+      puts 
+
+    @answer = gets.chomp
+
+    if @answer == "yes"
+      $x = @html
+      puts "\n\n\n\n\n" 
+      puts "Changes have been saved, and applied to main code-base. Thank You!"
+      puts "\n\n"
+      puts $x
+    else
+      puts "\n"
+      puts "You answered (no). Nothing has been changed."
+      puts "\n"
+    end
   end
 
 

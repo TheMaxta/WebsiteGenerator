@@ -154,7 +154,7 @@ class Css
 
 .panel4 {
 	height: 550px;
-	background-image: url('../images/view.jpg');
+	background-image: url('../images/panel4.jpg');
     height: 700px;
     width: 100%;
     background-size: cover;
@@ -254,10 +254,13 @@ class Css
  "
 
 	 @file = $y
-
+	 @targets = []
 
  	end
 
+
+
+=begin
 
  	# allows users to enter a filename to change the site's banner. When generated.
   def change_banner
@@ -404,16 +407,101 @@ class Css
 	  end
 	end
 
+=end
 
 
 
 
 
-  def change_panel3
-  end
 
-  def change_panel4
-  end
+	def set_new_pictures
+
+		@targets.each do |x|
+			puts "Would you like to change the #{x.target_name.capitalize} picture?"
+		    puts "Answer:           |   (yes)   or   (no)   |"
+		    @answer = gets.chomp
+		    	if @answer == "yes"
+		    		puts "\n\n\n"
+		    		puts "Okay! Please choose a picture from the options folder!\n"
+		    		puts "--------------------------"
+		    		puts "Type in the filename below:    (with the .jpg extension)"
+		    		puts "--------------------------"
+		    		puts "\n"
+		    		x.new_picture = gets.chomp
+		    		puts
+		    		puts
+
+	    			change_picture(x.target_name, x.default_picture, x.new_picture)
+
+
+		    	else
+			    	puts
+			    	puts "Okay! On to the next one!"
+			    	puts
+		    	end
+
+		end
+
+
+	end
+
+
+	def change_picture(target_name, default_picture, new_picture)
+
+
+		puts "\n\n============================================================================"
+		puts "Old #{target_name} picture:          #{default_picture}"
+		puts "--------------------------------------------------------------------------------"
+		puts "New #{target_name} picture:          #{new_picture}"
+		puts "================================================================================\n\n"
+
+		@file = @file.gsub(default_picture, new_picture)
+
+		save_changes
+
+
+	end
+
+
+	def save_changes
+
+		puts "Eveything look good? type yes to save changes."
+	    puts "Answer:           |   (yes)   or   (no)   |"
+	    puts 
+
+		@answer = gets.chomp
+
+		if @answer == "yes"
+			$y = @file
+			puts "\n\n\n\n\n" 
+			puts "Changes have been saved, and applied to main code-base. Thank You!"
+			puts "\n\n"
+		else
+			puts "\n"
+			puts "You answered (no). Nothing has been changed."
+			puts "\n"
+		end
+	end
+
+
+
+	def add_target_pictures(target_name, default_picture, new_picture)
+		@targets << Target_pictures.new(target_name, default_picture, new_picture)
+	end
+
+
+
+	class Target_pictures
+		attr_accessor :target_name, :default_picture, :new_picture
+
+		def initialize(target_name, default_picture, new_picture)
+			@target_name = target_name
+			@default_picture = default_picture
+			@new_picture = new_picture
+		end
+
+	end
+
 
 
   def set_color_sceme
@@ -421,4 +509,18 @@ class Css
 
   end
 
+
+
+
 end
+
+=begin
+test1 = Css.new
+test1.add_target_pictures("Banner", "banner.jpg", "conference.jpg")
+test1.add_target_pictures("Panel2", "panel2.jpg", "iphone.jpg")
+test1.add_target_pictures("Side", "side-pic.jpg", "suit.jpg")
+test1.add_target_pictures("Panel4 picture", "panel4.jpg", "keyboard.jpg")
+test1.set_new_pictures
+=end
+
+

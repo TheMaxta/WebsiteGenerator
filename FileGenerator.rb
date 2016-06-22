@@ -73,14 +73,25 @@ end
 require 'fileutils'
 require_relative 'html'
 require_relative 'css'
-x1 = Html.new
-y1 = Css.new
-y1.change_banner
-y1.change_panel2
-y1.change_side_picture
 
 
-puts "---------------------------------------------\n\n\n"
+test2 = Html.new
+test2.set_title
+test2.set_welcome
+test2.set_description
+
+
+
+test1 = Css.new
+test1.add_target_pictures("Banner", "banner.jpg", "conference.jpg")
+test1.add_target_pictures("Panel2", "panel2.jpg", "iphone.jpg")
+test1.add_target_pictures("Side", "side-pic.jpg", "suit.jpg")
+test1.add_target_pictures("Panel4 picture", "panel4.jpg", "keyboard.jpg")
+test1.set_new_pictures
+
+
+
+puts "\n\n\n---------------------------------------------\n\n\n"
 puts "Generating Site directory...."
 puts "\n"
 Dir.mkdir('Site')
