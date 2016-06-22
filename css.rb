@@ -109,7 +109,7 @@ class Css
 .sub-panel2 {
 	color: white;
 	text-align: center;
-	background-color: #4DADFE;
+	background-color: rgba(77,173,254,0.80);
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -145,7 +145,7 @@ class Css
 	float: right;
 	width: 50%;
 	height: 700px;
-	background-image: url('../images/girl.jpg');
+	background-image: url('../images/side-pic.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 100% 0%;
@@ -302,16 +302,111 @@ class Css
   end
   end
 
-  def change_panel1
 
-  end
 
-  def change_sidepicture
-  end
 
-  def change_panel2
 
-  end
+
+
+
+
+
+
+
+
+ 	# allows users to enter a filename to change the site's banner. When generated.
+ def change_panel2
+
+
+		puts "Would you like to change the page's second panel? |yes or no|"
+		ans = gets.chomp
+		if ans == "yes"
+
+			puts "\n\n\n"
+			puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
+			puts "the picture you choose must be in the options folder."
+			@new_pic = gets.chomp
+
+
+			# should check options folder, and display available images for banner
+
+		      @file = @file.gsub('panel2.jpg', @new_pic)
+		      puts @file
+		      puts
+		      puts "================="
+		      puts @new_pic
+		      puts "================="
+		      puts "\n\n"
+
+		      puts "Eveything look good? type save to save changes."
+		      save_ans = gets.chomp
+		      puts
+
+
+		      if save_ans == "save"
+			 	$y = @file
+			 	puts "Changes saved!"
+			  else
+			 	puts "Nothing was saved! you're safe."
+			  end
+
+
+
+	  else
+	  	puts "Okay, nevermind."
+	  end
+	end
+
+
+
+
+
+ 	# allows users to enter a filename to change the site's banner. When generated.
+ 	def change_side_picture
+
+
+		puts "Would you like to change the page's side picture? |yes or no|"
+		ans = gets.chomp
+		if ans == "yes"
+
+			puts "\n\n\n"
+			puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
+			puts "the picture you choose must be in the options folder."
+			@new_pic = gets.chomp
+
+
+			# should check options folder, and display available images for banner
+
+		      @file = @file.gsub('side-pic.jpg', @new_pic)
+		      puts @file
+		      puts
+		      puts "================="
+		      puts @new_pic
+		      puts "================="
+		      puts "\n\n"
+
+		      puts "Eveything look good? type save to save changes."
+		      save_ans = gets.chomp
+		      puts
+
+
+		      if save_ans == "save"
+			 	$y = @file
+			 	puts "Changes saved!"
+			  else
+			 	puts "Nothing was saved! you're safe."
+			  end
+
+
+
+	  else
+	  	puts "Okay, nevermind."
+	  end
+	end
+
+
+
+
 
 
   def change_panel3
@@ -327,5 +422,3 @@ class Css
   end
 
 end
-
-

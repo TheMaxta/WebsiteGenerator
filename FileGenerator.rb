@@ -76,9 +76,13 @@ require_relative 'css'
 x1 = Html.new
 y1 = Css.new
 y1.change_banner
+y1.change_panel2
+y1.change_side_picture
 
 
+puts "---------------------------------------------\n\n\n"
 puts "Generating Site directory...."
+puts "\n"
 Dir.mkdir('Site')
 Dir.mkdir('Site/assets')
 Dir.mkdir('Site/assets/images')
@@ -94,25 +98,25 @@ Dir.mkdir('Site/assets/stylesheets')
 
 
 puts "Generating index.html file........... "
-puts "\n\n"
+puts "\n"
 index = File.new('./Site/index.html','w')
 index.write $x
 
 puts "Generating Error Files................"
-puts "\n\n"
+puts "\n"
 error = File.new('./Site/404.html', 'w')
 
 
 
 puts "Generating custom stylesheets........."
-puts "\n\n"
+puts "\n"
 theme = File.new('./Site/assets/stylesheets/theme.css', 'w')
 theme.write $y
 
 
 
 puts "Generating bootstrap files............"
-puts "\n\n"
+puts "\n"
 FileUtils.cp_r 'bs/.', 'Site/assets/bootstrap'
 FileUtils.cp_r 'options/.','Site/assets/images'
 
