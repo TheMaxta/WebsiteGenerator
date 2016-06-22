@@ -1,6 +1,10 @@
 
 
 
+
+
+
+
  body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -11,9 +15,9 @@
 
 
 .hero-unit {
+	background-image: url('../images/conference.jpg');
 	height: 800px;
 	background-color: #737373;
-	background-image: url('../images/computer.jpg');
 	width: 100%;
 	text-align: center;
 	color: white;	
@@ -93,7 +97,7 @@
 	text-align: center;
 	background-color: #717070;
 	height: 790px;
-	background-image: url('../images/forest.jpg');
+	background-image: url('../images/panel2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center bottom;
@@ -242,7 +246,6 @@
 }
 
 .businesspanel2 {}
-
 
 
 

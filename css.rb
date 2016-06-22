@@ -259,19 +259,43 @@ class Css
  	end
 
 
-
+ 	# allows users to enter a filename to change the site's banner. When generated.
   def change_banner
-	puts "Would you like to change the page's banner?"
-	ans = gets.chomp
-	if ans == 'yes'
 
-		puts "Okay! type the picture you would like to replace it with! with .jpg"
+
+	puts "Would you like to change the page's banner? |yes or no|"
+	ans = gets.chomp
+	if ans == "yes"
+
+		puts "\n\n\n"
+		puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
+		puts "the picture you choose must be in the options folder."
 		@new_pic = gets.chomp
 
 
+		# should check options folder, and display available images for banner
+
 	      @file = @file.gsub('banner.jpg', @new_pic)
 	      puts @file
+	      puts
+	      puts "================="
 	      puts @new_pic
+	      puts "================="
+	      puts "\n\n"
+
+	      puts "Eveything look good? type save to save changes."
+	      save_ans = gets.chomp
+	      puts
+
+
+	      if save_ans == "save"
+		 	$y = @file
+		 	puts "Changes saved!"
+		  else
+		 	puts "Nothing was saved! you're safe."
+		  end
+
+
 
   else
   	puts "Okay, nevermind."
@@ -286,8 +310,7 @@ class Css
   end
 
   def change_panel2
-  	@file = @file.gsub('panel2.jpg','panel2.jpg')
-  	puts @file
+
   end
 
 
@@ -306,5 +329,3 @@ class Css
 end
 
 
-x = Css.new
-x.change_banner
