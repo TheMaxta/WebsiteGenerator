@@ -162,19 +162,19 @@ class Css
     clear: both;
 }
 
-.panel5 {
+.panel5-container {
 	width: 100%;
 	background-color: white;
 	height: 700px;
 	position: absolute;
 }
-#panel-img {
+.panel5 {
 	height: 100%;
 	width: 100%;
 	background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    background-image: url('../images/beach.jpg');
+    background-image: url('../images/panel5.jpg');
 
 }
 .sub-panel5 {
@@ -228,19 +228,12 @@ class Css
     font-size: 35px;
 }
 
-.panel-pic {
-	height: 100%;
-	width: 100%;
-	background-image: url('../images/water.jpg');
-	background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-}
 
-.panel-pic2 {
+
+.panel7 {
 	height: 100%;
 	width: 100%;
-	background-image: url('../images/laptop.jpg');
+	background-image: url('../images/panel7.jpg');
 	background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -260,160 +253,8 @@ class Css
 
 
 
-=begin
 
- 	# allows users to enter a filename to change the site's banner. When generated.
-  def change_banner
-
-
-	puts "Would you like to change the page's banner? |yes or no|"
-	ans = gets.chomp
-	if ans == "yes"
-
-		puts "\n\n\n"
-		puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
-		puts "the picture you choose must be in the options folder."
-		@new_pic = gets.chomp
-
-
-		# should check options folder, and display available images for banner
-
-	      @file = @file.gsub('banner.jpg', @new_pic)
-	      puts @file
-	      puts
-	      puts "================="
-	      puts @new_pic
-	      puts "================="
-	      puts "\n\n"
-
-	      puts "Eveything look good? type save to save changes."
-	      save_ans = gets.chomp
-	      puts
-
-
-	      if save_ans == "save"
-		 	$y = @file
-		 	puts "Changes saved!"
-		  else
-		 	puts "Nothing was saved! you're safe."
-		  end
-
-
-
-  else
-  	puts "Okay, nevermind."
-  end
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
- 	# allows users to enter a filename to change the site's banner. When generated.
- def change_panel2
-
-
-		puts "Would you like to change the page's second panel? |yes or no|"
-		ans = gets.chomp
-		if ans == "yes"
-
-			puts "\n\n\n"
-			puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
-			puts "the picture you choose must be in the options folder."
-			@new_pic = gets.chomp
-
-
-			# should check options folder, and display available images for banner
-
-		      @file = @file.gsub('panel2.jpg', @new_pic)
-		      puts @file
-		      puts
-		      puts "================="
-		      puts @new_pic
-		      puts "================="
-		      puts "\n\n"
-
-		      puts "Eveything look good? type save to save changes."
-		      save_ans = gets.chomp
-		      puts
-
-
-		      if save_ans == "save"
-			 	$y = @file
-			 	puts "Changes saved!"
-			  else
-			 	puts "Nothing was saved! you're safe."
-			  end
-
-
-
-	  else
-	  	puts "Okay, nevermind."
-	  end
-	end
-
-
-
-
-
- 	# allows users to enter a filename to change the site's banner. When generated.
- 	def change_side_picture
-
-
-		puts "Would you like to change the page's side picture? |yes or no|"
-		ans = gets.chomp
-		if ans == "yes"
-
-			puts "\n\n\n"
-			puts "Okay! type the picture you would like to replace it with!!   | with .jpg extension |"
-			puts "the picture you choose must be in the options folder."
-			@new_pic = gets.chomp
-
-
-			# should check options folder, and display available images for banner
-
-		      @file = @file.gsub('side-pic.jpg', @new_pic)
-		      puts @file
-		      puts
-		      puts "================="
-		      puts @new_pic
-		      puts "================="
-		      puts "\n\n"
-
-		      puts "Eveything look good? type save to save changes."
-		      save_ans = gets.chomp
-		      puts
-
-
-		      if save_ans == "save"
-			 	$y = @file
-			 	puts "Changes saved!"
-			  else
-			 	puts "Nothing was saved! you're safe."
-			  end
-
-
-
-	  else
-	  	puts "Okay, nevermind."
-	  end
-	end
-
-=end
-
-
-
-
-
-
+ 	# Allow's users to set panel pictures for website
 	def set_new_pictures
 
 		@targets.each do |x|
@@ -514,13 +355,19 @@ class Css
 
 end
 
+
 =begin
 test1 = Css.new
 test1.add_target_pictures("Banner", "banner.jpg", "conference.jpg")
 test1.add_target_pictures("Panel2", "panel2.jpg", "iphone.jpg")
 test1.add_target_pictures("Side", "side-pic.jpg", "suit.jpg")
-test1.add_target_pictures("Panel4 picture", "panel4.jpg", "keyboard.jpg")
+test1.add_target_pictures("Panel4", "panel4.jpg", "keyboard.jpg")
+test1.add_target_pictures("Panel5", "panel5.jpg", "computer.jpg")
+test1.add_target_pictures("Panel7", "panel7.jpg", "mountains.jpg")
+
 test1.set_new_pictures
 =end
+
+
 
 

@@ -86,7 +86,10 @@ test1 = Css.new
 test1.add_target_pictures("Banner", "banner.jpg", "conference.jpg")
 test1.add_target_pictures("Panel2", "panel2.jpg", "iphone.jpg")
 test1.add_target_pictures("Side", "side-pic.jpg", "suit.jpg")
-test1.add_target_pictures("Panel4 picture", "panel4.jpg", "keyboard.jpg")
+test1.add_target_pictures("Panel4", "panel4.jpg", "keyboard.jpg")
+test1.add_target_pictures("Panel5", "panel5.jpg", "computer.jpg")
+test1.add_target_pictures("Panel7", "panel7.jpg", "mountains.jpg")
+
 test1.set_new_pictures
 
 

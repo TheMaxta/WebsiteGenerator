@@ -77,9 +77,9 @@ class Html
 
 
     </div>
-    <div class='panel5'>
+    <div class='panel5-container'>
       <div class='sub-panel5'></div>
-        <img id='panel-img'>
+        <img class='panel5'>
 
 
       <div class='sub-panel52'>
@@ -95,7 +95,7 @@ class Html
             <strong>societal contributions</strong> or unwavering commitment
             to social justice.</div>
 
-            <div class='panel-pic2'></div>
+            <div class='panel7'></div>
 
             <div class='business-panel2'>
               <div class='text pull-left'></div>
